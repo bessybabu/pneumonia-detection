@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+  
+<meta charset="utf-8">
+ 
+<title>Pneumonia Detection</title>
+  
+<meta name="description" content="Automated system to diagnose Pneumonia.">
+ 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+ 
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    
+<link rel="stylesheet" href="/static/index.css">
+  
+</head>
+
+  
+<body>
+    
+<div class="container">
+      
+<div class="jumbotron mt-4">
+
+<div class="header-container">
+          
+<h1 class="display-4 text-primary">Pneumonia-Detector</h1>
+          
+<p class="lead text-primary">Upload a chest X-Ray image below, and see if you have pneumonia
+ or not.</p>
+          
+<hr class="my-5">
+        
+</div>
+        
+<div class="row">
+          
+<div class="col">
+            
+<div class="content-container">
+              
+<div class="info-container mb-4">
+                
+<p class="text-justify">Pneumonia is an inflammatory condition of the lung affecting primarily the small
+ air sacs known as alveoli.
+ Typically symptoms include some combination of productive or dry cough,
+chest pain, fever, and trouble breathing. Severity is variable.</p>
+
+ <a href="https://en.wikipedia.org/wiki/Pneumonia" class="btn btn-outline-dark">Learn More</a>
+</div>
+              
+<div id="output-container" class="output-container">
+
+<p class="text-muted">The classes that will be detected are by our neural network are: Normal, Viral,
+and Bacterial.</p>
+
+<small class="output mb-1">Class detected</small>
+                
+<div id="classOutput" class="text-light classOutput">
+                  
+<span id="classText">No Output</span>
+                  
+<!-- <small>Confidence: <span class="badge badge-dark" id="confidenceNP"> &nbsp;-&nbsp; </span></small> -->
+</div>
+                
+<div id="classOutputPneumoniaWrapper" class="mt-3">
+                  
+<small class="output mb-1">Type of Pneumonia</small>
+                  
+<div id="classOutputPneumonia" class="text-light classOutput">
+                    
+<span id="classTextPneumonia">No Output</span>
+                    
+<!-- <small>Confidence: <span class="badge badge-dark" id="confidenceBV"> &nbsp;-&nbsp; </span></small> -->
+</div>
+                
+</div>
+ </div>
+</div>
+</div>
+          
+<div class="col mt-4 mt-md-0">
+            
+<hr class="d-block d-md-none">
+            
+<div class="form-container">
+              
+<form action="" method="POST" enctype="multipart/form-data">
+                
+<div class="input-group mb-3">
+                  
+<div class="input-group-prepend">
+                    
+<span class="input-group-text" id="imageInputGroup">Upload the X-Ray</span>
+</div>
+                  
+<div class="custom-file text-center">
+                    
+<input type="file" class="custom-file-input" aria-describedby="imageInputGroup" id="img" name="img"
+accept="image/*,.jpeg,.jpg,.png">
+                    
+<label class="custom-file-label" for="imageInputGroup">Choose File</label>
+</div>
+                  
+<div class="input-group-append">
+
+<button class="btn btn-dark" type="sumbit" id="predictButton">Predict</button>
+
+</div>
+</div>
+                
+<div class="img-container d-flex justify-content-center">
+                  
+<img class="img-thumbnail rounded" src="https://dummyimage.com/350x350/333/ddd" alt="Output Image"
+ id="outputImg" width="350" height="350">
+
+</div>
+              
+</form>
+            
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+ 
+<!-- Bootstrap JS Dependencies -->
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      
+integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+ 
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  
+ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+  
+  <!-- Custom JS -->
+   
+ <script src="/static/index.js"></script>
+ 
+ </body>
+
+
+</html>
